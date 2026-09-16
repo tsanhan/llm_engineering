@@ -1,0 +1,20 @@
+services:
+  python:
+    container_name: python
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: llm-eng
+    working_dir: /app
+    volumes:
+      - ./:/app
+    stdin_open: true
+    tty: true
+    env_file:
+      - .env
+    models:
+      - deepseek
+
+models:
+  deepseek:
+    model: ai/deepseek-r1-distill-llama:latest 
