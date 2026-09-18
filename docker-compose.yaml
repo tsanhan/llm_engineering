@@ -13,8 +13,8 @@ services:
     env_file:
       - .env
     models:
-      - deepseek
-
+      - smollm2
 models:
-  deepseek:
-    model: ai/deepseek-r1-distill-llama:latest 
+  smollm2:
+    model: ai/smollm2:latest
+
