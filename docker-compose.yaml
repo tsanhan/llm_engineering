@@ -10,11 +10,10 @@ services:
       - ./:/app
     stdin_open: true
     tty: true
-    env_file:
-      - .env
     models:
       - smollm2
 models:
   smollm2:
     model: ai/smollm2:latest
+    
 

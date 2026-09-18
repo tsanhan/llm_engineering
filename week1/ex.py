@@ -8,8 +8,11 @@ Please explain what this code does and why:
 yield from {book.get("author") for book in books if book.get("author")}
 """
 
-client = OpenAI(base_url=os.getenv("SMOLLM2_URL"), api_key="not-needed")
-model = os.getenv("SMOLLM2_MODEL")
+base_url = os.getenv("SMOLLM2_URL", "http://localhost:12434/v1/")
+model = os.getenv("SMOLLM2_MODEL", "ai/smollm2:latest")
+
+
+client = OpenAI(base_url=base_url, api_key="not-needed")
 
 messages = [
     {
